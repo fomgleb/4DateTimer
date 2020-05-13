@@ -48,14 +48,19 @@ namespace Датамер
                 int Minute = rel.Minute;
                 int Second = rel.Second;
 
-
-                TextBoxLastDay.Text = AddZero(--Day);
-                TextBoxLastMonth.Text = AddZero(--Month);
-                TextBoxLastYear.Text = AddZero(--Year);
-
-                TextBoxLastHour.Text = AddZero(Hour);
-                TextBoxLastMinute.Text = AddZero(Minute);
-                TextBoxLastSecond.Text = AddZero(Second);
+                LabelLast.Text = "";
+                if (--Year != 0)
+                    LabelLast.Text += $"{Year} г.";
+                if (--Month != 0)
+                    LabelLast.Text += $" {Month} мес.";
+                if (--Day != 0)
+                    LabelLast.Text += $" {Day} дн.";
+                if (Hour != 0)
+                    LabelLast.Text += $" {Hour} ч.";
+                if (Minute != 0)
+                    LabelLast.Text += $" {Minute} мин.";
+                if (Second != 0)
+                    LabelLast.Text += $" {Second} сек.";
             }
             catch(Exception)
             {
